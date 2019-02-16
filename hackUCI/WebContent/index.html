@@ -1,0 +1,162 @@
+<!-- This page will be seen if you logged in -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Final Exam Scheduler</title>
+</head>
+<style>
+body, html {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("https://stmed.net/sites/default/files/the-dark-knight-rises-wallpapers-29997-5887042.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header nav {
+  background: black;
+  color: white;
+  padding: 30px 10px;
+}
+.search_box {
+  font-size:100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.topdiv a {
+  COLOR: #C0C0C0;
+}
+.search_table {
+  position: relative;
+  top: 100px;
+  left: 600px;
+}
+.s_button {
+  position: relative;
+  top: 20px;
+  left: 180px;
+}
+</style>
+
+<!-- search box-->
+<header>
+  <nav>
+    <div class="search_box" style="text-align:right;">
+      <div class="topdiv" style="color:#C0C0C0;">
+        <a href="main.html" >Home</a>
+<!--         <span>|</span>
+        <a href="advanced.html">Advanced Search</a>
+        <span>|</span>
+        <a href="#contact">Sign in</a>
+        <span>|</span>
+        <a href="#contact">My Cart</a> -->
+      </div>
+    </div> 
+  </nav>
+</header>
+
+<body>
+<div class="bg">
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height:100vh">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
+                    	<h2 class="text-center">Course Survey</h2>
+                    	<form id="checkout">
+						  <div class="form-group">
+						    <label for="InputFirstName">First Name</label>
+						    <input type="text" required="required" class="form-control" id="firstname" aria-describedby="FirstNameHelp" placeholder="Enter First Name" name="fn">
+						    <small id="FirstNameHelp" class="form-text text-muted">First character must be capital one.</small>
+						  </div>
+						  <div class="form-group">
+						    <label for="InputLastName">Last Name</label>
+						    <input type="text" required="required"class="form-control" id="lastname" aria-describedby="LastNameHelp" placeholder="Enter Last Name" name="ln">
+						    <small id="LastNameHelp" class="form-text text-muted">First character must be capital one.</small>
+						  </div>
+						  <div class="form-group">
+						    <label for="CourseName">Course Name</label>
+						    <input type="text" required="required"class="form-control" id="cname" aria-describedby="cnameHelp" placeholder="Enter Course Name" name="cn">
+						  </div>
+						  <div class="form-group" id="prof" >
+						  </div>
+						  <div class="form-group">
+						    <label for="gradeWant">Wanted Grade</label>
+						    <input type="number" min="0" max="100" required="required"class="form-control" id="gradeWant" aria-describedby="gradeWantHelp" placeholder="Enter the grade you want" name="gw">
+						    <small id="gradeWant" class="form-text text-muted">Use hundred-based percentage (0%~100%).</small>
+						  </div>
+						  <div class="form-group">
+						    <label for="currentGrade">Current Grade</label>
+						    <input type="number" min="0" max="100" required="required"class="form-control" id="currentGrade" aria-describedby="currentGradeHelp" placeholder="Enter current grade you have" name="cg">
+						    <small id="currentGradeHelp" class="form-text text-muted">Use hundred-based percentage (0%~100%).</small>
+						  </div>	
+						  <div class="form-group">
+						    <label for="finalDate">Final Date and Time</label>
+						    <input type="datetime-local" required="required"class="form-control" id="finalDate" aria-describedby="finalDateHelp" name="fd">
+						  </div>	
+						  <fieldset>
+						  	<label for="Question">Choose the priority of study factor</label>
+						   <div class="form-row">
+						    <div class="form-group col-md-4">
+						      <small for="profStyle">Lecturing style of professor</small>
+						      <select id="profStyle" class="form-control">
+						        <option selected>1</option>
+						        <option>2</option>
+						        <option>3</option>
+						      </select>
+						    </div>
+						    <div class="form-group col-md-4">
+						      <small for="topic">Class topic is so hard</small>
+						      <select id="topic" class="form-control">
+						        <option>1</option>
+						        <option selected>2</option>
+						        <option>3</option>
+						      </select>
+						    </div>
+						    <div class="form-group col-md-4">
+						      <small for="gradeWant">Grade you Wanted</small>
+						      <select id="gradeWant" class="form-control">
+						        <option>1</option>
+						        <option>2</option>
+						        <option selected>3</option>
+						      </select>
+						    </div>
+						  </div>
+ 						  </fieldset>  						  					  
+						  <button type="submit" class="btn btn-primary">Submit</button>
+						  
+						</form>
+					<div id="transaction_error_message"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- include your own JS file -->
+<!-- Load jQuery and Bootstrap JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<!-- Load our own JS file -->
+<!-- The path is relative to index.html, since these two files are in the same directory -->
+<!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path
+     otherwise the url is relative to the root path-->
+<script src="index.js"></script>
+</body>
+</html>
