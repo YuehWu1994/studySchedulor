@@ -5,7 +5,7 @@ function handleTransactionResult(resultDataString) {
     // If login succeeds, it will redirect the user to index.html
     if (resultDataJson["status"] === "success") {
     	console.log("show success message");
-        window.location.replace("receiveResponse.html");
+        window.location.replace("index.html");
     } else {
         console.log("show error message");
     }

@@ -1,0 +1,329 @@
+<!-- This example is following frontend and backend separation.
+
+    This .html performs two steps:
+    1. Create a html template skeleton, with all the elements defined (some left empty) and named with ids.
+    2. Load single-star.js to populate the data into empty elements.
+    -->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="http://cdn.dhtmlx.com/scheduler/edge/dhtmlxscheduler.css" 
+    type="text/css"> 
+        
+        <!-- Some simple CSS -->
+<style>
+body, html {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("https://stmed.net/sites/default/files/the-dark-knight-rises-wallpapers-29997-5887042.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+header nav {
+  background: black;
+  color: white;
+  padding: 30px 10px;
+}
+.search_box {
+  font-size:100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.topdiv a {
+  COLOR: #C0C0C0;
+}
+.search_table {
+  position: relative;
+  top: 100px;
+  left: 600px;
+}
+.s_button {
+  position: relative;
+  top: 20px;
+  left: 180px;
+}
+</style>
+
+        <title>Single Movie</title>
+    </head>
+
+    <body>
+        
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height:150vh">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                      <form id="calendar">
+                    	<h2 class="text-center">Course Survey</h2>       
+ 
+		   <div class="form-row">
+						  <div class="form-group col-md-6">
+						    <label for="InputFirstName">First Name</label>
+						    <input type="text" required="required" class="form-control" id="firstname" aria-describedby="FirstNameHelp" placeholder="Enter First Name" name="fn">
+						    <small id="FirstNameHelp" class="form-text text-muted">First character must be capital one.</small>
+						  </div>
+						  <div class="form-group col-md-6">
+						    <label for="InputLastName">Last Name</label>
+						    <input type="text" required="required"class="form-control" id="lastname" aria-describedby="LastNameHelp" placeholder="Enter Last Name" name="ln">
+						    <small id="LastNameHelp" class="form-text text-muted">First character must be capital one.</small>						 		     
+		  				</div>
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(1)</label>
+						    <input type="date" required="required" class="form-control" id="sd1" name="sd1">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" required="required" class="form-control" id="st1" name="st1">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" required="required" class="form-control" id="et1"name="et1">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st11" name="st11">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et11"name="et11">
+						  </div>						  							 		     
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(2)</label>
+						    <input type="date" class="form-control" id="sd2" name="sd2">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st2" name="st2">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et2"name="et2">
+						  </div>	
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st12" name="st12">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et12"name="et12">
+						  </div>						  
+						  						 		     
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(3)</label>
+						    <input type="date" class="form-control" id="sd3" name="sd3">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st3" name="st3">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et3"name="et3">
+						  </div>	
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st13" name="st13">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et13"name="et13">
+						  </div>							 		     
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(4)</label>
+						    <input type="date" class="form-control" id="sd4" name="sd4">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st4" name="st4">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et4"name="et4">
+						  </div>	
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st14" name="st14">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et14"name="et14">
+						  </div>							 		     
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(5)</label>
+						    <input type="date" class="form-control" id="sd5" name="sd5">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st5" name="st5">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et5"name="et5">
+						  </div>	
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st15" name="st15">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et15"name="et15">
+						  </div>							 		     
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(6)</label>
+						    <input type="date" class="form-control" id="sd6" name="sd6">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st6" name="st6">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et6"name="et6">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st16" name="st16">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et16"name="et16">
+						  </div>						  							 		     
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(7)</label>
+						    <input type="date" class="form-control" id="sd7" name="sd7">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st7" name="st7">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et7"name="et7">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st17" name="st17">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et17"name="et17">
+						  </div>						  							 		     
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(8)</label>
+						    <input type="date" class="form-control" id="sd8" name="sd8">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st8" name="st8">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et8"name="et8">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st18" name="st18">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et18"name="et18">
+						  </div>						  							 		     
+		  </div>	
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(9)</label>
+						    <input type="date" class="form-control" id="sd9" name="sd9">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st9" name="st9">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et9"name="et9">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st19" name="st19">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et19"name="et19">
+						  </div>						  							 		     
+		  </div>
+		   <div class="form-row">
+						  <div class="form-group col-md-4">
+						    <label for="finalDate">Date(10)</label>
+						    <input type="date" class="form-control" id="sd10" name="sd10">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(1)</label>
+						    <input type="time" class="form-control" id="st10" name="st10">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(1)</label>
+						    <input type="time" class="form-control" id="et10"name="et10">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">Start Time(2)</label>
+						    <input type="time" class="form-control" id="st20" name="st20">
+						  </div>
+						  <div class="form-group col-md-2">
+						    <label for="finalDate">End Time(2)</label>
+						    <input type="time" class="form-control" id="et20"name="et20">
+						  </div>						  							 		     
+		  </div>	
+		  			<button type="submit" class="btn btn-primary">Submit</button>	  		  
+		  		  	</form>  		  		  		  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	 
+    
+	<!-- Load jQuery and Bootstrap JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<!-- Load our own JS file -->
+	<!-- The path is relative to single-star.html, since these two files are in the same directory -->
+	<!-- Note the url does not contain a "/" in the beginning, which means the url is relative to current path
+     	 otherwise the url is relative to the root path-->
+	<!-- <script src="single-movie.js"></script> -->
+	<script src="calendar.js"></script>
+</body>
+</html>
