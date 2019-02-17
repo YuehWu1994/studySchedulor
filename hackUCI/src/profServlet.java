@@ -69,7 +69,7 @@ public class profServlet extends HttpServlet {
             	JsonObject jsonObject = new JsonObject();
             	jsonObject.addProperty("tFname", tFname);
             	jsonObject.addProperty("tLname", tLname);
-              jsonArray.add(jsonObject);
+                jsonArray.add(jsonObject);
             }      
             
             // write JSON string to output
